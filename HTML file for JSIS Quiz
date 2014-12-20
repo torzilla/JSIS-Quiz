@@ -19,17 +19,17 @@
 		<p class="questions" id="q1">Please click start</p>
 		<div id="radioContainer">
 		<form id="choices" class="answer">
-			<input type="radio" name="test" value="a"><label id="a"></label></input>
-			<input type="radio" name="test" value="b"><label id="b"></label></input>
-			<input type="radio" name="test" value="c"><label id="c"></label></input>
-			<input type="radio" name="test" value="d"><label id="d"></label></input>
+			<input type="radio" name="test" value="a"><label id="a"></label>
+			<input type="radio" name="test" value="b"><label id="b"></label>
+			<input type="radio" name="test" value="c"><label id="c"></label>
+			<input type="radio" name="test" value="d"><label id="d"></label>
 		</form>
-		<div>
-		<input id="start" type="button" value="start" onclick="start()"></input>
-		<input id="next" type="button" value="next" onclick="firstQuestion();getPointsQ1()"></input>
-		<input id="toSecond" type="button" value="next" onclick="secondQuestion(); getPointsQ2()"></input>
-		<input id="toThird" type="button" value="next" onclick="thirdQuestion(); getPointsQ3()"></input>
-		<input id="finish" type="button" value="finish" onclick="getPointsQ4();finish()"></input>
+		</div>
+		<input id="start" type="button" value="start" onclick="start()">
+		<input id="next" type="button" value="next" onclick="firstQuestion();getPointsQ1()">
+		<input id="toSecond" type="button" value="next" onclick="secondQuestion(); getPointsQ2()">
+		<input id="toThird" type="button" value="next" onclick="thirdQuestion(); getPointsQ3()">
+		<input id="finish" type="button" value="finish" onclick="getPointsQ4();finish()">
 	</section>
 
 </body>

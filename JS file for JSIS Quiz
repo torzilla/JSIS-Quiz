@@ -1,0 +1,130 @@
+
+//Arrays the contain objects with questions, answers and correct answers
+//for the quiz
+  
+var allQuestions = [{
+	question1: "Who's is Prime Minister of the United Kingdom?",
+	choices1: ["David Cameron", "Gordon Brown", "Winston Churchill", "Tony Blair"],
+	correctAnswer1: 0
+	},{
+	question2: "Who is Charlie Brown's dog?",
+	choices2: ["Scooby Doo", "Woodstock", "Snoopy", "Huckleberry Hound"],
+	correctAnswer2: 2
+	},{
+	question3: "Who is Super Mario's brother?",
+	choices3: ["Bowser", "Luigi", "Toad", "Wario"],
+	correctAnswer3: 1
+	},{
+	question4: "What is the most abundant element in air?",
+	choices4: ["Oxygen", "Helium", "Carbon Dioxide", "Nitrogen"],
+	correctAnswer4: 3
+	}] ;
+
+//variables for the question arrays
+
+var points = 0;
+	
+var first = allQuestions[0];
+var second = allQuestions[1];
+var third = allQuestions[2];
+var fourth = allQuestions[3];
+
+//functions to add new questions after previous question is answered
+
+function start(){
+	document.getElementById("q1").innerHTML = first.question1;
+	document.getElementById("a").innerHTML = first.choices1[0];
+	document.getElementById("b").innerHTML = first.choices1[1];
+	document.getElementById("c").innerHTML = first.choices1[2];
+	document.getElementById("d").innerHTML = first.choices1[3];
+	document.getElementById("choices").style.visibility = "visible";
+	document.getElementById("start").style.display = "none";
+	document.getElementById("next").style.visibility = "visible";
+
+};
+
+function firstQuestion(){
+	document.getElementById("q1").innerHTML = second.question2;
+	document.getElementById("a").innerHTML = second.choices2[0];
+	document.getElementById("b").innerHTML = second.choices2[1];
+	document.getElementById("c").innerHTML = second.choices2[2];
+	document.getElementById("d").innerHTML = second.choices2[3];
+	document.getElementById("next").style.display = "none";
+	document.getElementById("toSecond").style.visibility = "visible";
+};
+
+function secondQuestion(){
+	document.getElementById("q1").innerHTML = third.question3;
+	document.getElementById("a").innerHTML = third.choices3[0];
+	document.getElementById("b").innerHTML = third.choices3[1];
+	document.getElementById("c").innerHTML = third.choices3[2];
+	document.getElementById("d").innerHTML = third.choices3[3];
+	document.getElementById("toSecond").style.display = "none";
+	document.getElementById("toThird").style.visibility = "visible";
+};
+
+function thirdQuestion(){
+	document.getElementById("q1").innerHTML = fourth.question4;
+	document.getElementById("a").innerHTML = fourth.choices4[0];
+	document.getElementById("b").innerHTML = fourth.choices4[1];
+	document.getElementById("c").innerHTML = fourth.choices4[2];
+	document.getElementById("d").innerHTML = fourth.choices4[3];
+	document.getElementById("toThird").style.display = "none";
+	document.getElementById("finish").style.visibility = "visible";
+};
+
+//functions to check for correct user input on radio buttons
+
+function getPointsQ1(){
+	var radio = document.getElementsByName("test");
+	for(var i = 0; i < radio.length; i++);
+	if(radio[0].checked){
+		points = points + 1;
+		
+	}else{
+		points = points;
+		};
+		console.log(points);
+	};
+	
+function getPointsQ2(){
+	var radio = document.getElementsByName("test");
+	for(var i = 0; i < radio.length; i++);
+	if(radio[2].checked){
+		points = points + 1;
+	}else{
+		points = points;
+		};
+		console.log(points);
+	};
+	
+function getPointsQ3(){
+	var radio = document.getElementsByName("test");
+	for(var i = 0; i < radio.length; i++);
+	if(radio[1].checked){
+		points = points + 1;
+	}else{
+		points = points;
+		};
+		console.log(points);
+	};
+	
+function getPointsQ4(){
+	var radio = document.getElementsByName("test");
+	for(var i = 0; i < radio.length; i++);
+	if(radio[3].checked){
+		points = points + 1;
+	}else{
+		points = points;
+		};
+		console.log(points);
+	};
+	
+//function to display message and total points once the quiz is finished
+
+function finish(){
+	document.getElementById("q1").innerHTML = "You're Done!" + "<br>" + "You got " + points + " points";
+	document.getElementById("radioContainer").style.display = "none";
+	
+};
+
